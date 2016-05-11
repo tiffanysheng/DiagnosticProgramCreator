@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="Link" representedClassName=".Link" syncable="YES">
+        <attribute name="endNodeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endNodeX" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="endNodeY" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startNodeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startNodeX" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="startNodeY" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="program" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Program" inverseName="links" inverseEntity="Program" syncable="YES"/>
+    </entity>
+    <entity name="Node" representedClassName=".Node" syncable="YES">
+        <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="noNode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="positionX" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="positionY" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="scale" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="yesNode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="program" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Program" inverseName="nodes" inverseEntity="Program" syncable="YES"/>
+    </entity>
+    <entity name="Program" representedClassName=".Program" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="links" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Link" inverseName="program" inverseEntity="Link" syncable="YES"/>
+        <relationship name="nodes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Node" inverseName="program" inverseEntity="Node" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Link" positionX="-261" positionY="153" width="128" height="178"/>
+        <element name="Node" positionX="-54" positionY="9" width="128" height="178"/>
+        <element name="Program" positionX="-378" positionY="-132" width="128" height="105"/>
+    </elements>
+</model>
