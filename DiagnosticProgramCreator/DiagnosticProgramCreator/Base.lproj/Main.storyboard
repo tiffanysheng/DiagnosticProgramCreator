@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="gPE-UK-ViV">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainmenu" translatesAutoresizingMaskIntoConstraints="NO" id="bMN-8D-g3L">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYX-LC-13m">
                                 <rect key="frame" x="232" y="234" width="128" height="57"/>
@@ -68,12 +68,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="5VS-i0-Wv9" firstAttribute="top" secondItem="gPE-UK-ViV" secondAttribute="bottom" id="0Jn-v5-XQm"/>
                             <constraint firstItem="mYX-LC-13m" firstAttribute="centerX" secondItem="eeC-gt-Pnd" secondAttribute="centerX" id="1qk-cS-OLm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gPE-UK-ViV" secondAttribute="trailing" constant="-20" id="UTm-uE-nCd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bMN-8D-g3L" secondAttribute="trailing" constant="-20" id="RgB-b1-7ne"/>
+                            <constraint firstItem="bMN-8D-g3L" firstAttribute="leading" secondItem="eeC-gt-Pnd" secondAttribute="leadingMargin" constant="-20" id="XKV-gM-Phn"/>
                             <constraint firstItem="x6o-CX-Wqm" firstAttribute="centerX" secondItem="eeC-gt-Pnd" secondAttribute="centerX" id="aZu-SM-6kO"/>
-                            <constraint firstItem="gPE-UK-ViV" firstAttribute="top" secondItem="eeC-gt-Pnd" secondAttribute="topMargin" id="ftW-gu-9nf"/>
-                            <constraint firstItem="gPE-UK-ViV" firstAttribute="leading" secondItem="eeC-gt-Pnd" secondAttribute="leadingMargin" constant="-20" id="qJ7-H4-whg"/>
+                            <constraint firstItem="bMN-8D-g3L" firstAttribute="top" secondItem="a6M-ge-SH6" secondAttribute="bottom" id="pUp-F9-XBr"/>
+                            <constraint firstItem="5VS-i0-Wv9" firstAttribute="top" secondItem="bMN-8D-g3L" secondAttribute="bottom" id="tYn-LN-5ch"/>
                             <constraint firstItem="N5t-q6-wwd" firstAttribute="centerX" secondItem="eeC-gt-Pnd" secondAttribute="centerX" id="vOx-eh-G1H"/>
                             <constraint firstItem="EVL-hO-O35" firstAttribute="centerX" secondItem="eeC-gt-Pnd" secondAttribute="centerX" id="xqw-sw-g4r"/>
                         </constraints>
@@ -268,8 +268,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="1721" height="2048"/>
         <image name="createButton" width="386" height="149"/>
+        <image name="mainmenu" width="1119" height="1080"/>
         <image name="manage" width="385" height="153"/>
         <image name="run" width="386" height="149"/>
         <image name="view" width="386" height="149"/>
