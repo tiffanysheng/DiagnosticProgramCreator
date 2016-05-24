@@ -240,10 +240,10 @@ class CreateScene: SKScene, UITextFieldDelegate {
                     let alertView = UIAlertView()
                     alertView.title = "Alert"
                     alertView.tag = 3
-                    alertView.message = "Type Y or N"
+                    alertView.message = "Type 'Y' or 'N' for line's label."
                     alertView.alertViewStyle = UIAlertViewStyle.PlainTextInput
-                    alertView.addButtonWithTitle("No")
-                    alertView.addButtonWithTitle("Yes")
+                    alertView.addButtonWithTitle("Cancel")
+                    alertView.addButtonWithTitle("Ok")
                     alertView.cancelButtonIndex = 0
                     alertView.delegate = self
                     alertView.show()
@@ -465,28 +465,40 @@ class CreateScene: SKScene, UITextFieldDelegate {
                     alertView.show()
                 }
                 else if linkText != "" {
-                    let linkLabel = SKLabelNode(fontNamed: "Thonburi-Bold")
-                    linkLabel.name = startNode.name! + "," + endNode.name!
-                    linkLabel.text = linkText
-                    linkLabel.position = CGPointMake(endNode.position.x, startNode.position.y)
-                    linkLabel.fontColor = SKColor.blackColor()
-                    linkLabel.zPosition = 2
-                    addChild(linkLabel)
-                    linkLabels.append(linkLabel)
-                    
-                    let shapeNode = SKShapeNode()
-                    shapeNode.path = self.drawLine(startNode, end: endNode)
-                    shapeNode.name = startNode.name! + "," + endNode.name!
-                    shapeNode.strokeColor = UIColor.blackColor()
-                    shapeNode.lineWidth = 2
-                    shapeNode.zPosition = 0
-                    self.addChild(shapeNode)
-                    links.append(shapeNode)
-                    let path = Line(name: startNode.name! + "," + endNode.name!, start: startNode, end: endNode, label: linkLabel)
-                    paths.append(path)
-                    isSelectedLine = false
-                    selectedLine.removeFromParent()
-                    addChild(line)
+                    if linkText == "Y" || linkText == "N" {
+                        let linkLabel = SKLabelNode(fontNamed: "Thonburi-Bold")
+                        linkLabel.name = startNode.name! + "," + endNode.name!
+                        linkLabel.text = linkText
+                        linkLabel.position = CGPointMake(endNode.position.x, startNode.position.y)
+                        linkLabel.fontColor = SKColor.blackColor()
+                        linkLabel.zPosition = 2
+                        addChild(linkLabel)
+                        linkLabels.append(linkLabel)
+                        
+                        let shapeNode = SKShapeNode()
+                        shapeNode.path = self.drawLine(startNode, end: endNode)
+                        shapeNode.name = startNode.name! + "," + endNode.name!
+                        shapeNode.strokeColor = UIColor.blackColor()
+                        shapeNode.lineWidth = 2
+                        shapeNode.zPosition = 0
+                        self.addChild(shapeNode)
+                        links.append(shapeNode)
+                        let path = Line(name: startNode.name! + "," + endNode.name!, start: startNode, end: endNode, label: linkLabel)
+                        paths.append(path)
+                        isSelectedLine = false
+                        selectedLine.removeFromParent()
+                        addChild(line)
+                    }
+                    else {
+                        let alertView = UIAlertView()
+                        alertView.title = "Alert"
+                        alertView.tag = 6
+                        alertView.message = "Please type 'Y' or 'N'"
+                        alertView.addButtonWithTitle("OK")
+                        alertView.cancelButtonIndex = 0
+                        alertView.delegate = self
+                        alertView.show()
+                    }
                 }
             }
             else {
