@@ -409,6 +409,12 @@ class CreateScene: SKScene, UITextFieldDelegate {
         textField.adjustsFontSizeToFitWidth = true
         textField.becomeFirstResponder()
         textField.delegate = self
+        for label in textLabels {
+            if label.name == selectedNode.name {
+                textField.text = label.text
+            }
+            
+        }
         self.view!.addSubview(textField)
 
     }
@@ -427,6 +433,7 @@ class CreateScene: SKScene, UITextFieldDelegate {
         }
         
         textField.resignFirstResponder()
+        textField.text = ""
         textField.removeFromSuperview()
         return true
         
